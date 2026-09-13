@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JEON | Eau de Parfum</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #0b0b0b;
+    color: white;
+}
+
+/* NAVIGATION */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 28px;
+    letter-spacing: 8px;
+    font-weight: normal;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+nav a:hover {
+    opacity: 0.6;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 7% 60px;
+    background: #050505;
+    gap: 50px;
+}
+
+.hero-text {
+    width: 45%;
+}
+
+.hero-text h1 {
+    font-size: clamp(60px, 9vw, 130px);
+    letter-spacing: 15px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.hero-text h2 {
+    font-size: 22px;
+    letter-spacing: 5px;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.hero-text p {
+    color: #bbb;
+    line-height: 1.8;
+    font-size: 17px;
+    max-width: 500px;
+    margin-bottom: 35px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 35px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: white;
+    color: black;
+}
+
+.hero-image {
+    width: 50%;
+}
+
+.hero-image img {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+}
+
+/* COLLECTION */
+
+.collection {
+    padding: 120px 7%;
+    background: #111;
+    text-align: center;
+}
+
+.collection-title {
+    font-size: 50px;
+    font-weight: normal;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.collection-subtitle {
+    color: #999;
+    margin-bottom: 70px;
+    letter-spacing: 2px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+.product {
+    background: #181818;
+    padding-bottom: 35px;
+    transition: 0.4s;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+}
+
+.product-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.product h3 {
+    font-size: 25px;
+    font-weight: normal;
+    letter-spacing: 3px;
+    margin: 25px 10px 10px;
+}
+
+.product p {
+    color: #999;
+    line-height: 1.6;
+    padding: 0 25px;
+    margin-bottom: 25px;
+}
+
+.product .button {
+    font-size: 12px;
+    padding: 12px 25px;
+}
+
+/* ABOUT */
+
+.about {
+    padding: 120px 15%;
+    text-align: center;
+    background: #050505;
+}
+
+.about h2 {
+    font-size: 50px;
+    font-weight: normal;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+
+.about p {
+    color: #aaa;
+    font-size: 18px;
+    line-height: 2;
+    max-width: 750px;
+    margin: auto;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 40px;
+    text-align: center;
+    background: #000;
+    color: #777;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+    header {
+        padding: 18px 5%;
+    }
+
+    nav a {
+        margin-left: 12px;
+        font-size: 11px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 130px;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        height: auto;
+    }
+
+    .collection,
+    .about {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+
+    <div class="logo">JEON</div>
+
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#collection">COLLECTION</a>
+        <a href="#about">ABOUT</a>
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <h1>JEON</h1>
+
+        <h2>EAU DE PARFUM</h2>
+
+        <p>
+            Three worlds. Three moods. One collection.
+            Discover the JEON fragrance collection,
+            created for those who want to leave an impression.
+        </p>
+
+        <a href="#collection" class="button">
+            EXPLORE COLLECTION
+        </a>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img
+        src="Tri-Coloured Perfume Splash Collection.png"
+        alt="JEON perfume collection">
+
+    </div>
+
+</section>
+
+
+<!-- COLLECTION -->
+
+<section class="collection" id="collection">
+
+    <h2 class="collection-title">
+        THE COLLECTION
+    </h2>
+
+    <p class="collection-subtitle">
+        THREE SIGNATURE FRAGRANCES
+    </p>
+
+
+    <div class="products">
+
+
+        <!-- VANILLA -->
+
+        <div class="product">
+
+            <img
+            class="product-image"
+            src="JEON Vanilla Delight Perfume Bottle.png"
+            alt="JEON Vanilla Delight perfume">
+
+            <h3>VANILLA DELIGHT</h3>
+
+            <p>
+                Warm, sweet and unforgettable.
+                A smooth vanilla fragrance designed
+                to create a feeling of comfort and luxury.
+            </p>
+
+            <a href="#" class="button">
+                DISCOVER
+            </a>
+
+        </div>
+
+
+        <!-- LAVENDER -->
+
+        <div class="product">
+
+            <img
+            class="product-image"
+            src="Jeon Lavender Dreams Perfume Bottle.png"
+            alt="JEON Lavender Dreams perfume">
+
+            <h3>LAVENDER DREAMS</h3>
+
+            <p>
+                Cool, calm and mysterious.
+                A dreamy fragrance inspired by
+                peaceful nights and endless skies.
+            </p>
+
+            <a href="#" class="button">
+                DISCOVER
+            </a>
+
+        </div>
+
+
+        <!-- EMERALD -->
+
+        <div class="product">
+
+            <img
+            class="product-image"
+            src="Emerald Woods Fragrance Bottle.png"
+            alt="JEON Emerald Woods perfume">
+
+            <h3>EMERALD WOODS</h3>
+
+            <p>
+                Fresh, deep and powerful.
+                A bold green fragrance inspired
+                by mysterious forests.
+            </p>
+
+            <a href="#" class="button">
+                DISCOVER
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <h2>THE JEON STORY</h2>
+
+    <p>
+        JEON was created around the idea that fragrance
+        should be more than a scent. It should be an
+        experience. Every bottle represents a different
+        mood, a different colour and a different dream.
+    </p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>© 2026 JEON — EAU DE PARFUM</p>
+
+</footer>
+
+</body>
+</html>
