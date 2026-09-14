@@ -1,1 +1,1597 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>JEON | Eau de Parfum</title> <style> * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { font-family: Georgia, "Times New Roman", serif; background: #080808; color: #fff; } /* ========================= HEADER ========================= */ header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 20px 6%; display: flex; justify-content: space-between; align-items: center; background: rgba(5, 5, 5, 0.88); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.08); } .logo { font-size: 28px; letter-spacing: 9px; font-weight: normal; } nav { display: flex; align-items: center; gap: 28px; } nav a { color: white; text-decoration: none; font-size: 12px; letter-spacing: 2px; transition: 0.3s; } nav a:hover { opacity: 0.55; } .cart-button { border: 1px solid rgba(255,255,255,0.5); background: transparent; color: white; padding: 10px 15px; cursor: pointer; font-family: inherit; letter-spacing: 1px; transition: 0.3s; } .cart-button:hover { background: white; color: black; } .cart-count { display: inline-block; margin-left: 5px; } /* ========================= HERO ========================= */ .hero { min-height: 100vh; display: flex; align-items: center; justify-content: space-between; padding: 130px 7% 70px; gap: 60px; background: radial-gradient(circle at 80% 50%, #1b1b1b 0%, #080808 45%, #030303 100%); } .hero-text { width: 45%; animation: fadeUp 1s ease; } .hero-text h1 { font-size: clamp(65px, 10vw, 135px); letter-spacing: 16px; font-weight: normal; margin-bottom: 10px; } .hero-text h2 { font-size: 20px; letter-spacing: 6px; font-weight: normal; margin-bottom: 28px; } .hero-text p { color: #aaa; line-height: 1.9; font-size: 17px; max-width: 520px; margin-bottom: 35px; } .button { display: inline-block; padding: 15px 30px; border: 1px solid white; color: white; text-decoration: none; letter-spacing: 2px; font-size: 12px; transition: 0.35s; cursor: pointer; background: transparent; } .button:hover { background: white; color: black; } .hero-image { width: 50%; animation: fadeIn 1.3s ease; } .hero-image img { width: 100%; max-height: 650px; object-fit: contain; display: block; filter: drop-shadow(0 25px 40px rgba(0,0,0,0.7)); } /* ========================= COLLECTION ========================= */ .collection { padding: 120px 7%; background: #101010; text-align: center; } .collection-title { font-size: clamp(38px, 5vw, 58px); font-weight: normal; letter-spacing: 6px; margin-bottom: 15px; } .collection-subtitle { color: #888; margin-bottom: 70px; letter-spacing: 3px; font-size: 13px; } .products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 1400px; margin: auto; } .product { background: #181818; padding-bottom: 35px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); transition: 0.4s; } .product:hover { transform: translateY(-8px); border-color: rgba(255,255,255,0.18); } .product-image { width: 100%; height: 500px; object-fit: cover; display: block; } .product h3 { font-size: 23px; font-weight: normal; letter-spacing: 3px; margin: 25px 10px 8px; } .price { font-size: 20px; margin-bottom: 15px; color: #fff; } .product p { color: #999; line-height: 1.7; padding: 0 28px; margin-bottom: 25px; font-size: 15px; } .shop-button { display: inline-block; padding: 13px 28px; background: white; color: black; border: 1px solid white; text-decoration: none; letter-spacing: 2px; font-size: 11px; cursor: pointer; font-family: inherit; transition: 0.3s; } .shop-button:hover { background: transparent; color: white; } /* ========================= ABOUT ========================= */ .about { padding: 130px 15%; text-align: center; background: #050505; } .about h2 { font-size: clamp(38px, 5vw, 55px); font-weight: normal; letter-spacing: 5px; margin-bottom: 30px; } .about p { color: #aaa; font-size: 18px; line-height: 2; max-width: 780px; margin: auto; } /* ========================= CART ========================= */ .cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 1999; display: none; } .cart-overlay.active { display: block; } .cart { position: fixed; top: 0; right: -430px; width: min(430px, 100%); height: 100vh; background: #111; z-index: 2000; padding: 30px; transition: right 0.4s ease; box-shadow: -10px 0 40px rgba(0,0,0,0.5); overflow-y: auto; } .cart.active { right: 0; } .cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 25px; } .cart-header h2 { font-weight: normal; letter-spacing: 3px; } .close-cart { background: none; border: none; color: white; font-size: 28px; cursor: pointer; } .cart-item { display: flex; justify-content: space-between; align-items: center; gap: 15px; padding: 18px 0; border-bottom: 1px solid #292929; } .cart-item-info h3 { font-size: 15px; font-weight: normal; letter-spacing: 1px; margin-bottom: 8px; } .cart-item-info p { color: #999; font-size: 13px; } .quantity-controls { display: flex; align-items: center; gap: 10px; } .quantity-controls button { width: 28px; height: 28px; border: 1px solid #555; background: transparent; color: white; cursor: pointer; } .cart-total { display: flex; justify-content: space-between; font-size: 20px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #444; } .checkout-button { width: 100%; margin-top: 25px; padding: 17px; background: white; color: black; border: 1px solid white; cursor: pointer; font-family: inherit; letter-spacing: 2px; transition: 0.3s; } .checkout-button:hover { background: transparent; color: white; } .empty-cart { color: #777; text-align: center; padding: 50px 0; } /* ========================= FOOTER ========================= */ footer { padding: 45px 20px; text-align: center; background: #000; color: #777; letter-spacing: 2px; font-size: 12px; } .footer-logo { color: white; font-size: 25px; letter-spacing: 7px; margin-bottom: 15px; } /* ========================= ANIMATIONS ========================= */ @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } /* ========================= TABLETS ========================= */ @media (max-width: 900px) { header { padding: 17px 5%; } nav { gap: 14px; } nav a { font-size: 10px; } .hero { flex-direction: column; text-align: center; padding-top: 130px; } .hero-text, .hero-image { width: 100%; } .hero-text p { margin-left: auto; margin-right: auto; } .hero-image { max-width: 600px; } .products { grid-template-columns: repeat(2, 1fr); } } /* ========================= PHONES ========================= */ @media (max-width: 600px) { header { padding: 15px 4%; } .logo { font-size: 20px; letter-spacing: 6px; } nav { gap: 8px; } nav a { font-size: 8px; letter-spacing: 1px; } .cart-button { padding: 8px 9px; font-size: 10px; } .hero { padding: 115px 6% 60px; gap: 35px; } .hero-text h1 { font-size: 58px; letter-spacing: 9px; } .hero-text h2 { font-size: 14px; letter-spacing: 4px; } .hero-text p { font-size: 15px; } .collection { padding: 85px 6%; } .collection-title { font-size: 34px; letter-spacing: 3px; } .collection-subtitle { margin-bottom: 40px; font-size: 10px; } .products { grid-template-columns: 1fr; gap: 25px; } .product-image { height: auto; max-height: 520px; object-fit: cover; } .product h3 { font-size: 20px; } .product p { font-size: 14px; } .about { padding: 90px 8%; } .about h2 { font-size: 35px; } .about p { font-size: 16px; } .cart { padding: 25px 20px; } } </style> </head> <body> <!-- ========================= NAVIGATION ========================= --> <header> <div class="logo">JEON</div> <nav> <a href="#home">HOME</a> <a href="#collection">SHOP</a> <a href="#about">ABOUT</a> <button class="cart-button" onclick="openCart()"> CART <span class="cart-count" id="cartCount">0</span> </button> </nav> </header> <!-- ========================= HERO ========================= --> <section class="hero" id="home"> <div class="hero-text"> <h1>JEON</h1> <h2>EAU DE PARFUM</h2> <p> Three worlds. Three moods. One collection. Discover the JEON fragrance collection, created for those who want to leave an impression. </p> <a href="#collection" class="button"> SHOP NOW </a> </div> <div class="hero-image"> <img src="jeon new 50ml range.png" alt="JEON perfume collection"> </div> </section> <!-- ========================= COLLECTION ========================= --> <section class="collection" id="collection"> <h2 class="collection-title"> THE COLLECTION </h2> <p class="collection-subtitle"> THREE SIGNATURE FRAGRANCES · $20 EACH </p> <div class="products"> <!-- VANILLA --> <div class="product"> <img class="product-image" src="jeon vanilla deelight.png" alt="JEON Vanilla Deelight perfume"> <h3>VANILLA DELIGHT</h3> <div class="price">$20.00</div> <p> Warm, sweet and unforgettable. A smooth vanilla fragrance designed to create a feeling of comfort and luxury. </p> <button class="shop-button" onclick="addToCart('Vanilla Delight', 20)"> SHOP NOW </button> </div> <!-- LAVENDER --> <div class="product"> <img class="product-image" src="jeon lavender dreams.png" alt="JEON Lavender Dreams perfume"> <h3>LAVENDER DREAMS</h3> <div class="price">$20.00</div> <p> Cool, calm and mysterious. A dreamy fragrance inspired by peaceful nights and endless skies. </p> <button class="shop-button" onclick="addToCart('Lavender Dreams', 20)"> SHOP NOW </button> </div> <!-- EMERALD --> <div class="product"> <img class="product-image" src="JEON emerald woods.png" alt="JEON Emerald Woods perfume"> <h3>EMERALD WOODS</h3> <div class="price">$20.00</div> <p> Fresh, deep and powerful. A bold green fragrance inspired by mysterious forests. </p> <button class="shop-button" onclick="addToCart('Emerald Woods', 20)"> SHOP NOW </button> </div> </div> </section> <!-- ========================= ABOUT ========================= --> <section class="about" id="about"> <h2>THE JEON STORY</h2> <p> JEON was created around the idea that fragrance should be more than a scent. It should be an experience. Every bottle represents a different mood, a different colour and a different dream. </p> </section> <!-- ========================= FOOTER ========================= --> <footer> <div class="footer-logo">JEON</div> <p>EAU DE PARFUM</p> <br> <p>© 2026 JEON — ALL RIGHTS RESERVED</p> </footer> <!-- ========================= CART OVERLAY ========================= --> <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"> </div> <!-- ========================= SHOPPING CART ========================= --> <div class="cart" id="cart"> <div class="cart-header"> <h2>YOUR CART</h2> <button class="close-cart" onclick="closeCart()"> × </button> </div> <div id="cartItems"></div> <div class="cart-total"> <span>TOTAL</span> <span id="cartTotal">$0.00</span> </div> <button class="checkout-button" onclick="checkout()"> CHECKOUT </button> </div> <script> let cart = []; /* ADD PRODUCT */ function addToCart(name, price) { const existingProduct = cart.find( item => item.name === name ); if (existingProduct) { existingProduct.quantity++; } else { cart.push({ name: name, price: price, quantity: 1 }); } updateCart(); openCart(); } /* UPDATE CART */ function updateCart() { const cartItems = document.getElementById("cartItems"); const cartCount = document.getElementById("cartCount"); const cartTotal = document.getElementById("cartTotal"); cartItems.innerHTML = ""; let total = 0; let itemCount = 0; if (cart.length === 0) { cartItems.innerHTML = '<div class="empty-cart">Your cart is empty.</div>'; } cart.forEach((item, index) => { total += item.price * item.quantity; itemCount += item.quantity; const cartItem = document.createElement("div"); cartItem.className = "cart-item"; cartItem.innerHTML = ` <div class="cart-item-info"> <h3>${item.name}</h3> <p>$${item.price.toFixed(2)} each</p> </div> <div class="quantity-controls"> <button onclick="changeQuantity(${index}, -1)"> − </button> <span>${item.quantity}</span> <button onclick="changeQuantity(${index}, 1)"> + </button> </div> `; cartItems.appendChild(cartItem); }); cartCount.textContent = itemCount; cartTotal.textContent = "$" + total.toFixed(2); } /* CHANGE QUANTITY */ function changeQuantity(index, amount) { cart[index].quantity += amount; if (cart[index].quantity <= 0) { cart.splice(index, 1); } updateCart(); } /* OPEN CART */ function openCart() { document .getElementById("cart") .classList.add("active"); document .getElementById("cartOverlay") .classList.add("active"); } /* CLOSE CART */ function closeCart() { document .getElementById("cart") .classList.remove("active"); document .getElementById("cartOverlay") .classList.remove("active"); } /* CHECKOUT */ function checkout() { if (cart.length === 0) { alert("Your cart is empty."); return; } alert( "Thank you for shopping with JEON! " + "Online checkout will be available soon." ); } /* INITIAL CART */ updateCart(); </script> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JEON | Eau de Parfum</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #080808;
+    color: #fff;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    padding: 15px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(5, 5, 5, 0.92);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+
+/* JEON NOSE LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 105px;
+    height: auto;
+    display: block;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.55;
+}
+
+
+/* CART BUTTON */
+
+.cart-button {
+    border: 1px solid rgba(255,255,255,0.5);
+
+    background: transparent;
+    color: white;
+
+    padding: 10px 15px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.cart-button:hover {
+    background: white;
+    color: black;
+}
+
+.cart-count {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 130px 7% 70px;
+
+    gap: 60px;
+
+    background:
+    radial-gradient(
+        circle at 80% 50%,
+        #1b1b1b 0%,
+        #080808 45%,
+        #030303 100%
+    );
+}
+
+.hero-text {
+    width: 45%;
+
+    animation: fadeUp 1s ease;
+}
+
+.hero-text h1 {
+    font-size: clamp(65px, 10vw, 135px);
+
+    letter-spacing: 16px;
+
+    font-weight: normal;
+
+    margin-bottom: 10px;
+}
+
+.hero-text h2 {
+    font-size: 20px;
+
+    letter-spacing: 6px;
+
+    font-weight: normal;
+
+    margin-bottom: 28px;
+}
+
+.hero-text p {
+    color: #aaa;
+
+    line-height: 1.9;
+
+    font-size: 17px;
+
+    max-width: 520px;
+
+    margin-bottom: 35px;
+}
+
+
+/* HERO BUTTON */
+
+.button {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    border: 1px solid white;
+
+    color: white;
+
+    text-decoration: none;
+
+    letter-spacing: 2px;
+
+    font-size: 12px;
+
+    transition: 0.35s;
+
+    cursor: pointer;
+
+    background: transparent;
+}
+
+.button:hover {
+    background: white;
+    color: black;
+}
+
+
+/* HERO IMAGE */
+
+.hero-image {
+    width: 50%;
+
+    animation: fadeIn 1.3s ease;
+}
+
+.hero-image img {
+    width: 100%;
+
+    max-height: 650px;
+
+    object-fit: contain;
+
+    display: block;
+
+    filter:
+    drop-shadow(
+        0 25px 40px rgba(0,0,0,0.7)
+    );
+}
+
+
+/* =========================
+   COLLECTION
+========================= */
+
+.collection {
+    padding: 120px 7%;
+
+    background: #101010;
+
+    text-align: center;
+}
+
+.collection-title {
+    font-size: clamp(38px, 5vw, 58px);
+
+    font-weight: normal;
+
+    letter-spacing: 6px;
+
+    margin-bottom: 15px;
+}
+
+.collection-subtitle {
+    color: #888;
+
+    margin-bottom: 70px;
+
+    letter-spacing: 3px;
+
+    font-size: 13px;
+}
+
+
+/* PRODUCTS */
+
+.products {
+    display: grid;
+
+    grid-template-columns:
+    repeat(3, 1fr);
+
+    gap: 28px;
+
+    max-width: 1400px;
+
+    margin: auto;
+}
+
+
+/* PRODUCT */
+
+.product {
+    background: #181818;
+
+    padding-bottom: 35px;
+
+    overflow: hidden;
+
+    border:
+    1px solid
+    rgba(255,255,255,0.06);
+
+    transition: 0.4s;
+}
+
+.product:hover {
+    transform: translateY(-8px);
+
+    border-color:
+    rgba(255,255,255,0.18);
+}
+
+
+/* PRODUCT IMAGE */
+
+.product-image {
+    width: 100%;
+
+    height: 500px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* PRODUCT TEXT */
+
+.product h3 {
+    font-size: 23px;
+
+    font-weight: normal;
+
+    letter-spacing: 3px;
+
+    margin:
+    25px 10px 8px;
+}
+
+.price {
+    font-size: 20px;
+
+    margin-bottom: 15px;
+
+    color: #fff;
+}
+
+.product p {
+    color: #999;
+
+    line-height: 1.7;
+
+    padding: 0 28px;
+
+    margin-bottom: 25px;
+
+    font-size: 15px;
+}
+
+
+/* SHOP BUTTON */
+
+.shop-button {
+    display: inline-block;
+
+    padding: 13px 28px;
+
+    background: white;
+
+    color: black;
+
+    border: 1px solid white;
+
+    text-decoration: none;
+
+    letter-spacing: 2px;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    transition: 0.3s;
+}
+
+.shop-button:hover {
+    background: transparent;
+
+    color: white;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    padding: 130px 15%;
+
+    text-align: center;
+
+    background: #050505;
+}
+
+.about h2 {
+    font-size: clamp(38px, 5vw, 55px);
+
+    font-weight: normal;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 30px;
+}
+
+.about p {
+    color: #aaa;
+
+    font-size: 18px;
+
+    line-height: 2;
+
+    max-width: 780px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   CART
+========================= */
+
+.cart-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+    rgba(0,0,0,0.7);
+
+    z-index: 1999;
+
+    display: none;
+}
+
+.cart-overlay.active {
+    display: block;
+}
+
+
+/* CART PANEL */
+
+.cart {
+    position: fixed;
+
+    top: 0;
+
+    right: -430px;
+
+    width: min(430px, 100%);
+
+    height: 100vh;
+
+    background: #111;
+
+    z-index: 2000;
+
+    padding: 30px;
+
+    transition:
+    right 0.4s ease;
+
+    box-shadow:
+    -10px 0 40px
+    rgba(0,0,0,0.5);
+
+    overflow-y: auto;
+}
+
+.cart.active {
+    right: 0;
+}
+
+
+/* CART HEADER */
+
+.cart-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom:
+    1px solid #333;
+
+    padding-bottom: 20px;
+
+    margin-bottom: 25px;
+}
+
+.cart-header h2 {
+    font-weight: normal;
+
+    letter-spacing: 3px;
+}
+
+
+/* CLOSE BUTTON */
+
+.close-cart {
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* CART ITEM */
+
+.cart-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px 0;
+
+    border-bottom:
+    1px solid #292929;
+}
+
+.cart-item-info h3 {
+    font-size: 15px;
+
+    font-weight: normal;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+.cart-item-info p {
+    color: #999;
+
+    font-size: 13px;
+}
+
+
+/* QUANTITY */
+
+.quantity-controls {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.quantity-controls button {
+    width: 28px;
+
+    height: 28px;
+
+    border:
+    1px solid #555;
+
+    background: transparent;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* TOTAL */
+
+.cart-total {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 20px;
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top:
+    1px solid #444;
+}
+
+
+/* CHECKOUT */
+
+.checkout-button {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 17px;
+
+    background: white;
+
+    color: black;
+
+    border: 1px solid white;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.checkout-button:hover {
+    background: transparent;
+
+    color: white;
+}
+
+
+/* EMPTY CART */
+
+.empty-cart {
+    color: #777;
+
+    text-align: center;
+
+    padding: 50px 0;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 45px 20px;
+
+    text-align: center;
+
+    background: #000;
+
+    color: #777;
+
+    letter-spacing: 2px;
+
+    font-size: 12px;
+}
+
+
+/* FOOTER LOGO */
+
+.footer-logo {
+    color: white;
+
+    font-size: 25px;
+
+    letter-spacing: 7px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+        translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+        translateY(0);
+    }
+
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 17px 5%;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .hero {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-top: 130px;
+    }
+
+    .hero-text,
+    .hero-image {
+        width: 100%;
+    }
+
+    .hero-text p {
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+    .hero-image {
+        max-width: 600px;
+    }
+
+    .products {
+        grid-template-columns:
+        repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================
+   PHONES
+========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 12px 4%;
+    }
+
+    .logo img {
+        width: 75px;
+    }
+
+    nav {
+        gap: 8px;
+    }
+
+    nav a {
+        font-size: 8px;
+
+        letter-spacing: 1px;
+    }
+
+    .cart-button {
+        padding: 8px 9px;
+
+        font-size: 10px;
+    }
+
+
+    .hero {
+
+        padding:
+        115px 6% 60px;
+
+        gap: 35px;
+    }
+
+    .hero-text h1 {
+
+        font-size: 58px;
+
+        letter-spacing: 9px;
+    }
+
+    .hero-text h2 {
+
+        font-size: 14px;
+
+        letter-spacing: 4px;
+    }
+
+    .hero-text p {
+
+        font-size: 15px;
+    }
+
+
+    .collection {
+
+        padding:
+        85px 6%;
+    }
+
+    .collection-title {
+
+        font-size: 34px;
+
+        letter-spacing: 3px;
+    }
+
+    .collection-subtitle {
+
+        margin-bottom: 40px;
+
+        font-size: 10px;
+    }
+
+
+    .products {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .product-image {
+
+        height: auto;
+
+        max-height: 520px;
+
+        object-fit: cover;
+    }
+
+    .product h3 {
+
+        font-size: 20px;
+    }
+
+    .product p {
+
+        font-size: 14px;
+    }
+
+
+    .about {
+
+        padding:
+        90px 8%;
+    }
+
+    .about h2 {
+
+        font-size: 35px;
+    }
+
+    .about p {
+
+        font-size: 16px;
+    }
+
+
+    .cart {
+
+        padding:
+        25px 20px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+
+    <div class="logo">
+
+        <img
+            src="jeon-logo.png"
+            alt="JEON"
+        >
+
+    </div>
+
+
+    <nav>
+
+        <a href="#home">
+            HOME
+        </a>
+
+        <a href="#collection">
+            SHOP
+        </a>
+
+        <a href="#about">
+            ABOUT
+        </a>
+
+
+        <button
+            class="cart-button"
+            onclick="openCart()"
+        >
+
+            CART
+
+            <span
+                class="cart-count"
+                id="cartCount"
+            >
+                0
+            </span>
+
+        </button>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+
+    <div class="hero-text">
+
+        <h1>
+            JEON
+        </h1>
+
+        <h2>
+            EAU DE PARFUM
+        </h2>
+
+
+        <p>
+
+            Three worlds.
+            Three moods.
+            One collection.
+
+            Discover the JEON
+            fragrance collection,
+            created for those who
+            want to leave an impression.
+
+        </p>
+
+
+        <a
+            href="#collection"
+            class="button"
+        >
+
+            SHOP NOW
+
+        </a>
+
+    </div>
+
+
+
+    <div class="hero-image">
+
+        <img
+            src="jeon new 50ml range.png"
+            alt="JEON perfume collection"
+        >
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     COLLECTION
+========================= -->
+
+<section
+    class="collection"
+    id="collection"
+>
+
+
+    <h2 class="collection-title">
+
+        THE COLLECTION
+
+    </h2>
+
+
+    <p class="collection-subtitle">
+
+        THREE SIGNATURE FRAGRANCES
+        · $20 EACH
+
+    </p>
+
+
+
+    <div class="products">
+
+
+
+        <!-- VANILLA -->
+
+        <div class="product">
+
+            <img
+                class="product-image"
+                src="jeon vanilla deelight.png"
+                alt="JEON Vanilla Delight perfume"
+            >
+
+
+            <h3>
+                VANILLA DELIGHT
+            </h3>
+
+
+            <div class="price">
+                $20.00
+            </div>
+
+
+            <p>
+
+                Warm, sweet and unforgettable.
+
+                A smooth vanilla fragrance
+                designed to create a feeling
+                of comfort and luxury.
+
+            </p>
+
+
+            <button
+                class="shop-button"
+                onclick="addToCart('Vanilla Delight', 20)"
+            >
+
+                SHOP NOW
+
+            </button>
+
+        </div>
+
+
+
+        <!-- LAVENDER -->
+
+        <div class="product">
+
+            <img
+                class="product-image"
+                src="jeon lavender dreams.png"
+                alt="JEON Lavender Dreams perfume"
+            >
+
+
+            <h3>
+                LAVENDER DREAMS
+            </h3>
+
+
+            <div class="price">
+                $20.00
+            </div>
+
+
+            <p>
+
+                Cool, calm and mysterious.
+
+                A dreamy fragrance inspired
+                by peaceful nights and
+                endless skies.
+
+            </p>
+
+
+            <button
+                class="shop-button"
+                onclick="addToCart('Lavender Dreams', 20)"
+            >
+
+                SHOP NOW
+
+            </button>
+
+        </div>
+
+
+
+        <!-- EMERALD -->
+
+        <div class="product">
+
+            <img
+                class="product-image"
+                src="JEON emerald woods.png"
+                alt="JEON Emerald Woods perfume"
+            >
+
+
+            <h3>
+                EMERALD WOODS
+            </h3>
+
+
+            <div class="price">
+                $20.00
+            </div>
+
+
+            <p>
+
+                Fresh, deep and powerful.
+
+                A bold green fragrance
+                inspired by mysterious forests.
+
+            </p>
+
+
+            <button
+                class="shop-button"
+                onclick="addToCart('Emerald Woods', 20)"
+            >
+
+                SHOP NOW
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section
+    class="about"
+    id="about"
+>
+
+
+    <h2>
+        THE JEON STORY
+    </h2>
+
+
+    <p>
+
+        JEON was created around the idea
+        that fragrance should be more than
+        a scent.
+
+        It should be an experience.
+
+        Every bottle represents a different
+        mood, a different colour and
+        a different dream.
+
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        JEON
+    </div>
+
+
+    <p>
+        EAU DE PARFUM
+    </p>
+
+
+    <br>
+
+
+    <p>
+        © 2026 JEON —
+        ALL RIGHTS RESERVED
+    </p>
+
+</footer>
+
+
+
+<!-- =========================
+     CART OVERLAY
+========================= -->
+
+<div
+    class="cart-overlay"
+    id="cartOverlay"
+    onclick="closeCart()"
+>
+</div>
+
+
+
+<!-- =========================
+     SHOPPING CART
+========================= -->
+
+<div
+    class="cart"
+    id="cart"
+>
+
+
+    <div class="cart-header">
+
+        <h2>
+            YOUR CART
+        </h2>
+
+
+        <button
+            class="close-cart"
+            onclick="closeCart()"
+        >
+
+            ×
+
+        </button>
+
+    </div>
+
+
+    <div id="cartItems">
+    </div>
+
+
+    <div class="cart-total">
+
+        <span>
+            TOTAL
+        </span>
+
+
+        <span id="cartTotal">
+            $0.00
+        </span>
+
+    </div>
+
+
+    <button
+        class="checkout-button"
+        onclick="checkout()"
+    >
+
+        CHECKOUT
+
+    </button>
+
+</div>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+let cart = [];
+
+
+
+/* =========================
+   ADD PRODUCT
+========================= */
+
+function addToCart(name, price) {
+
+    const existingProduct =
+        cart.find(
+            item => item.name === name
+        );
+
+
+    if (existingProduct) {
+
+        existingProduct.quantity++;
+
+    }
+
+    else {
+
+        cart.push({
+
+            name: name,
+
+            price: price,
+
+            quantity: 1
+
+        });
+
+    }
+
+
+    updateCart();
+
+    openCart();
+
+}
+
+
+
+/* =========================
+   UPDATE CART
+========================= */
+
+function updateCart() {
+
+    const cartItems =
+        document.getElementById(
+            "cartItems"
+        );
+
+
+    const cartCount =
+        document.getElementById(
+            "cartCount"
+        );
+
+
+    const cartTotal =
+        document.getElementById(
+            "cartTotal"
+        );
+
+
+    cartItems.innerHTML = "";
+
+
+    let total = 0;
+
+    let itemCount = 0;
+
+
+
+    if (cart.length === 0) {
+
+        cartItems.innerHTML =
+            '<div class="empty-cart">Your cart is empty.</div>';
+
+    }
+
+
+
+    cart.forEach(
+        (item, index) => {
+
+            total +=
+                item.price *
+                item.quantity;
+
+
+            itemCount +=
+                item.quantity;
+
+
+
+            const cartItem =
+                document.createElement(
+                    "div"
+                );
+
+
+            cartItem.className =
+                "cart-item";
+
+
+
+            cartItem.innerHTML = `
+
+                <div class="cart-item-info">
+
+                    <h3>
+                        ${item.name}
+                    </h3>
+
+                    <p>
+                        $${item.price.toFixed(2)}
+                        each
+                    </p>
+
+                </div>
+
+
+                <div class="quantity-controls">
+
+                    <button
+                        onclick="changeQuantity(${index}, -1)"
+                    >
+                        −
+                    </button>
+
+
+                    <span>
+                        ${item.quantity}
+                    </span>
+
+
+                    <button
+                        onclick="changeQuantity(${index}, 1)"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+            `;
+
+
+            cartItems.appendChild(
+                cartItem
+            );
+
+        }
+    );
+
+
+
+    cartCount.textContent =
+        itemCount;
+
+
+    cartTotal.textContent =
+        "$" + total.toFixed(2);
+
+}
+
+
+
+/* =========================
+   CHANGE QUANTITY
+========================= */
+
+function changeQuantity(
+    index,
+    amount
+) {
+
+    cart[index].quantity +=
+        amount;
+
+
+    if (
+        cart[index].quantity <= 0
+    ) {
+
+        cart.splice(index, 1);
+
+    }
+
+
+    updateCart();
+
+}
+
+
+
+/* =========================
+   OPEN CART
+========================= */
+
+function openCart() {
+
+    document
+        .getElementById("cart")
+        .classList
+        .add("active");
+
+
+    document
+        .getElementById("cartOverlay")
+        .classList
+        .add("active");
+
+}
+
+
+
+/* =========================
+   CLOSE CART
+========================= */
+
+function closeCart() {
+
+    document
+        .getElementById("cart")
+        .classList
+        .remove("active");
+
+
+    document
+        .getElementById("cartOverlay")
+        .classList
+        .remove("active");
+
+}
+
+
+
+/* =========================
+   CHECKOUT
+========================= */
+
+function checkout() {
+
+    if (cart.length === 0) {
+
+        alert(
+            "Your cart is empty."
+        );
+
+        return;
+
+    }
+
+
+    alert(
+        "Thank you for shopping with JEON! " +
+        "Online checkout will be available soon."
+    );
+
+}
+
+
+
+/* =========================
+   INITIAL CART
+========================= */
+
+updateCart();
+
+</script>
+
+
+</body>
+</html>
